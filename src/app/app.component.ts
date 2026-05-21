@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { CardComponent } from './components/card/card.component';
 import { TableComponent } from './components/table/table.component';
 
@@ -9,7 +10,7 @@ import { TableComponent } from './components/table/table.component';
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent{
   title = 'gm-cotizaciones';
 
   usuarios = [
@@ -33,3 +34,5 @@ export class AppComponent {
     }
   ];
 }
+
+
