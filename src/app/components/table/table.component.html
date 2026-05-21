@@ -1,25 +1,36 @@
-<table class="dynamic-table" *ngIf="data.length">
-
+<div class="overflow-x-auto rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900">
+  <table class="w-full border-collapse text-sm" *ngIf="data.length">
     <thead>
-        <tr>
-            <th *ngFor="let col of columns">
-                {{ col }}
-            </th>
-        </tr>
+      <tr class="bg-[#da6c24]">
+        <th
+          *ngFor="let col of columns"
+          class="px-4 py-3 text-left text-xs font-medium tracking-wide text-white"
+        >
+          {{ col }}
+        </th>
+      </tr>
     </thead>
-
     <tbody>
-        <tr *ngFor="let row of data">
-
-            <td *ngFor="let col of columns">
-                {{ row[col] }}
-            </td>
-
-        </tr>
+      <tr
+        *ngFor="let row of data; let even = even"
+        class="border-t border-neutral-100 dark:border-neutral-800"
+        [class.bg-neutral-50]="even"
+        [class.dark:bg-neutral-800]="even"
+      >
+        <td
+          *ngFor="let col of columns"
+          class="px-4 py-[11px] text-neutral-700 dark:text-neutral-300"
+        >
+          {{ row[col] }}
+        </td>
+      </tr>
     </tbody>
+  </table>
+</div>
 
-</table>
-
-<p *ngIf="!data.length">
-    Sin información
+<p
+  *ngIf="!data.length"
+  class="text-sm text-neutral-500 italic py-4"
+>
+  Sin información
 </p>

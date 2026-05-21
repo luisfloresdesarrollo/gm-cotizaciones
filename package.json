@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "tailwind:build": "npx tailwindcss -i src/tailwind.css -o src/assets/tailwind.css --config tailwind.config.js",
+    "tailwind:watch": "npx tailwindcss -i src/tailwind.css -o src/assets/tailwind.css --config tailwind.config.js --watch",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -33,12 +35,15 @@
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.19.130",
+    "autoprefixer": "^10.5.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19",
     "typescript": "~5.5.2"
   }
 }
