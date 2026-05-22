@@ -19,7 +19,7 @@ export interface RequestOptions {
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl: string = 'https://tu-api.com/api'; // 🔧 Cambia esto por tu URL base
+  private baseUrl: string = 'https://mysafelink.safelinkcorp.com:5050/api'; // 🔧 Cambia esto por tu URL base
 
   constructor(private http: HttpClient) {}
 
@@ -109,7 +109,8 @@ export class ApiService {
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'Ocurrió un error desconocido';
 
-    if (error.error instanceof ErrorEvent) {
+    // `ErrorEvent` is a browser DOM type and is undefined on the server (SSR).
+    if (typeof ErrorEvent !== 'undefined' && error.error instanceof ErrorEvent) {
       // Error del lado del cliente
       errorMessage = `Error de red: ${error.error.message}`;
     } else {
