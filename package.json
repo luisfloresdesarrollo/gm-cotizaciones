@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "NODE_OPTIONS=--no-deprecation ng serve",
     "tailwind:build": "npx tailwindcss -i src/tailwind.css -o src/assets/tailwind.css --config tailwind.config.js",
     "tailwind:watch": "npx tailwindcss -i src/tailwind.css -o src/assets/tailwind.css --config tailwind.config.js --watch",
-    "build": "ng build",
+    "build": "NODE_OPTIONS=--no-deprecation ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:gm-cotizaciones": "node dist/gm-cotizaciones/server/server.mjs"
