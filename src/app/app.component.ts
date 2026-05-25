@@ -32,26 +32,6 @@ export class AppComponent implements OnInit {
     moneda: 'MXN'
   };
 
-  // POST — crear cotizacion
-  crearCotizacion(): void {
-    const nuevaCotizacion = {
-      "sumaAsegurada": 10000,
-      "idRazonSocial": 6331,
-      "idOficinaProducto": 14253,
-      "idMoneda": 2,
-      "idEstadoOrigen": 1615,
-      "idEstadoDestino": 14,
-      "idBeneficiario": 15427,
-      "isDeducible": false,
-      "idTipoContenedor": 1
-    };
-
-    this.api.post<any>('MySafelinkOpen/cotizador', nuevaCotizacion).subscribe({
-      next: (creado) => console.log('Creado:', creado),
-      error: (err) => console.error(err),
-    });
-  }
-
   // POST — con Authorization token en headers
   crearCotizacionConAuthorization(): void {
     const nuevaCotizacion = {
@@ -67,7 +47,7 @@ export class AppComponent implements OnInit {
     };
 
     // Tu token (obtenlo del localStorage, sessionStorage, o una variable)
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiJjN2ZiZWY3ZS1hNjRlLTQ0OWQtYTZkMi0xYzVhMWI2NWE5ZDciLCJpYXQiOjE3Nzk0NzAxMDIsImV4cCI6MTc3OTQ3MzcwMn0.aTlCBIFoj3jn35pDooqZh-IW0OX8vE_rFs9J9CIjTQI';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiJjN2ZiZWY3ZS1hNjRlLTQ0OWQtYTZkMi0xYzVhMWI2NWE5ZDciLCJpYXQiOjE3Nzk3MjQ1MjQsImV4cCI6MTc3OTcyODEyNH0.T7aFpqaaizdIE-pvWOiCmn0S2lMKJ2pkoC7nT95t3RQ';
 
     // Opciones con headers personalizados incluyendo Authorization
     const options = {
